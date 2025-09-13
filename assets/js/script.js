@@ -36,6 +36,41 @@ const propiedades_venta = [
     smoke: false,
     pets: true,
   },
+  {
+    nombre: "Departamento en barrio antiguo",
+    src: "https://plus.unsplash.com/premium_photo-1695050139775-deeee5360168?q=80&w=712&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    descripcion: "Hermoso y clásico departamento con salida directa a la calle",
+    ubicacion: "1599 Sunset Boulevard, Los Angeles, CA 90026",
+    habitaciones: 2,
+    baños: 2,
+    valor: 1500,
+    smoke: true,
+    pets: true,
+  },
+
+  {
+    nombre: "Casa céntrica en barrio familiar",
+    src: "https://images.unsplash.com/photo-1702795488026-eebe9fdfdf17?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    descripcion:
+      "Ubicada en un barrio tranquilo pero céntrico te permite ir a pie a cualquier sitio",
+    ubicacion: "4820 Maple Street, Riverdale, NY 10471",
+    habitaciones: 4,
+    baños: 2,
+    valor: 2600,
+    smoke: true,
+    pets: false,
+  },
+  {
+    nombre: "Casa moderna estilo moderno",
+    src: "https://images.unsplash.com/photo-1523217582562-09d0def993a6?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    descripcion: "Casa aesthetic en mirador con vista a la ciudad",
+    ubicacion: "2301 Ocean Drive, Miami Beach, FL 33139",
+    habitaciones: 4,
+    baños: 2,
+    valor: 1400,
+    smoke: false,
+    pets: false,
+  },
 ];
 
 const forSale = document.getElementById("for-sale-properties");
@@ -115,6 +150,41 @@ const propiedades_alquiler = [
     valor: 2200,
     smoke: false,
     pets: false,
+  },
+  {
+    nombre: "Pequeña cabaña para fin de semana",
+    src: "https://plus.unsplash.com/premium_photo-1681922761134-1f2bde2ec525?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    descripcion: "Ideal para una escapada en pareja, cómodo e idílico",
+    ubicacion: "77 Beacon Hill Road, Boston, MA 02108",
+    habitaciones: 1,
+    baños: 1,
+    valor: 580,
+    smoke: false,
+    pets: false,
+  },
+  {
+    nombre: "Tiny house en el bosque",
+    src: "https://plus.unsplash.com/premium_photo-1686090450479-370d5ddf4de1?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    descripcion:
+      "Vive la experiencia de vivir en una casa pequeña con todo lo necesario ",
+    ubicacion: "9150 Redwood Avenue, San Francisco, CA 94121",
+    habitaciones: 1,
+    baños: 1,
+    valor: 2800,
+    smoke: false,
+    pets: true,
+  },
+  {
+    nombre: "Departamento con balcón",
+    src: "https://plus.unsplash.com/premium_photo-1676321046694-a9ca1b6d4182?q=80&w=789&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    descripcion:
+      "Departamento con gran vista en edificio con piscina y gimnasio",
+    ubicacion: "742 Evergreen Terrace, Springfield, CA 90210",
+    habitaciones: 3,
+    baños: 2,
+    valor: 5000,
+    smoke: false,
+    pets: true,
   },
 ];
 
