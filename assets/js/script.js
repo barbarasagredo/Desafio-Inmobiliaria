@@ -75,3 +75,42 @@ const propiedades_venta = [
     pets: true,
   },
 ];
+
+const forSale = document.getElementById("for-sale-properties");
+let html = "";
+
+for (let property of propiedades_venta) {
+  html += `
+    <div class="col-md-4 mb-4">
+      <div class="card h-100">
+        <img src="${
+          property.src
+        }" class="card-img-top" alt="Imagen del departamento" />
+        <div class="card-body">
+          <h5 class="card-title">${property.nombre}</h5>
+          <p class="card-text">${property.descripcion}</p>
+          <p><i class="fas fa-map-marker-alt"></i> ${property.ubicacion}</p>
+          <p>
+            <i class="fas fa-bed"></i> ${property.habitaciones} Habitaciones |
+            <i class="fas fa-bath"></i> ${property.baños} Baños
+          </p>
+          <p><i class="fas fa-dollar-sign"></i> ${property.valor.toLocaleString(
+            "es-CO"
+          )}</p>
+          <p class=" ${
+            property.smoke === false ? "text-danger" : "text-success"
+          } "><i class="fas fa-smoking-ban"></i> ${
+    property.smoke === false ? "No se permite fumar" : "Permitido fumar"
+  }</p>
+          <p class=${
+            property.pets === false ? "text-danger" : "text-success"
+          }><i class="fa-solid fa-ban"></i>${
+    property.pets === false ? " No se permiten mascotas" : " Mascotas permitidas"
+  }</p>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+forSale.innerHTML = html;
