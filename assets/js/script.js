@@ -73,46 +73,6 @@ const propiedades_venta = [
   },
 ];
 
-const forSale = document.getElementById("for-sale-properties");
-if (forSale) {
-  let htmlSale = "";
-  for (let property of propiedades_venta) {
-    htmlSale += `
-    <div class="col-md-4 mb-4">
-      <div class="card h-100">
-        <img src="${
-          property.src
-        }" class="card-img-top" alt="Imagen del departamento" />
-        <div class="card-body">
-          <h5 class="card-title">${property.nombre}</h5>
-          <p class="card-text">${property.descripcion}</p>
-          <p><i class="fas fa-map-marker-alt"></i> ${property.ubicacion}</p>
-          <p>
-            <i class="fas fa-bed"></i> ${property.habitaciones} Habitaciones |
-            <i class="fas fa-bath"></i> ${property.baños} Baños
-          </p>
-          <p><i class="fas fa-dollar-sign"></i> ${property.valor.toLocaleString(
-            "es-CO"
-          )}</p>
-          <p class="${property.smoke ? "text-success" : "text-danger"}">
-            <i class="${
-              property.smoke ? "fas fa-smoking" : "fas fa-smoking-ban"
-            }"></i> 
-            ${property.smoke ? "Permitido fumar" : "No se permite fumar"}
-          </p>
-          <p class="${property.pets ? "text-success" : "text-danger"}">
-            <i class="${property.pets ? "fas fa-paw" : "fa-solid fa-ban"}"></i> 
-            ${property.pets ? "Mascotas permitidas" : "No se permiten mascotas"}
-          </p>
-        </div>
-      </div>
-    </div>
-  `;
-  }
-
-  forSale.innerHTML = htmlSale;
-}
-
 // PROPIEDADES EN ALQUILER
 const propiedades_alquiler = [
   {
@@ -188,11 +148,16 @@ const propiedades_alquiler = [
   },
 ];
 
-const forRent = document.getElementById("for-rent-properties");
-let htmlRent = "";
-if (forRent) {
-  for (let property of propiedades_alquiler) {
-    htmlRent += `
+const forSale = document.getElementById("for-sale-properties");
+const saleIndex = document.getElementById("venta");
+let saleProperties = propiedades_venta;
+
+if (saleIndex) {
+  saleProperties = propiedades_venta.slice(0, 3);
+}
+let htmlSale = "";
+for (let property of saleProperties) {
+  htmlSale += `
     <div class="col-md-4 mb-4">
       <div class="card h-100">
         <img src="${
@@ -223,7 +188,53 @@ if (forRent) {
       </div>
     </div>
   `;
-  }
+}
+if (forSale) {
+  forSale.innerHTML = htmlSale;
+}
 
+const forRent = document.getElementById("for-rent-properties");
+const rentIndex = document.getElementById("alquiler");
+let propiedadesRenta = propiedades_alquiler;
+
+if (rentIndex) {
+  propiedadesRenta = propiedades_alquiler.slice(0, 3);
+}
+
+let htmlRent = "";
+for (let property of propiedadesRenta) {
+  htmlRent += `
+    <div class="col-md-4 mb-4">
+      <div class="card h-100">
+        <img src="${
+          property.src
+        }" class="card-img-top" alt="Imagen del departamento" />
+        <div class="card-body">
+          <h5 class="card-title">${property.nombre}</h5>
+          <p class="card-text">${property.descripcion}</p>
+          <p><i class="fas fa-map-marker-alt"></i> ${property.ubicacion}</p>
+          <p>
+            <i class="fas fa-bed"></i> ${property.habitaciones} Habitaciones |
+            <i class="fas fa-bath"></i> ${property.baños} Baños
+          </p>
+          <p><i class="fas fa-dollar-sign"></i> ${property.valor.toLocaleString(
+            "es-CO"
+          )}</p>
+          <p class="${property.smoke ? "text-success" : "text-danger"}">
+            <i class="${
+              property.smoke ? "fas fa-smoking" : "fas fa-smoking-ban"
+            }"></i> 
+            ${property.smoke ? "Permitido fumar" : "No se permite fumar"}
+          </p>
+          <p class="${property.pets ? "text-success" : "text-danger"}">
+            <i class="${property.pets ? "fas fa-paw" : "fa-solid fa-ban"}"></i> 
+            ${property.pets ? "Mascotas permitidas" : "No se permiten mascotas"}
+          </p>
+        </div>
+      </div>
+    </div>
+  `;
+}
+if (forRent) {
   forRent.innerHTML = htmlRent;
 }
